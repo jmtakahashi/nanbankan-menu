@@ -1,4 +1,5 @@
 const resetButton = document.getElementById('resetAll')
+const showAllButton = document.getElementById('showAll')
 const regNums = document.getElementsByClassName('menuItem-regNum')
 
 resetButton.addEventListener('click', (e) => {
@@ -18,5 +19,9 @@ resetButton.addEventListener('click', (e) => {
   }
 })
 
-
+showAllButton.addEventListener('click', (e) => {
+  for (el of regNums) {
+    el.classList.remove('blur')
+  };
+})
 

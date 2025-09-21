@@ -29,10 +29,8 @@
 .header {
   width: 100%;
   grid-row-start: 1;
-}
-
-.pageTitle {
-  margin-bottom: 1rem;
+  display: grid;
+  gap: 2rem;
 }
 
 .main {
