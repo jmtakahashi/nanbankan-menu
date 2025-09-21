@@ -22,7 +22,7 @@ const grill = [
   {
     regNum: 5,
     item: "chicken with shiso",
-    desc: "white meat wrapped with shiso"
+    desc: "white meat wrapped with shiso leaf"
   },
   {
     regNum: 7,
@@ -47,17 +47,17 @@ const grill = [
   {
     regNum: 12,
     item: "bonbochi",
-    desc: "chicken tail meat"
+    desc: "chicken tail"
   },
   {
     regNum: 13,
     item: "nankotsu",
-    desc: "chicken leg cartiledge"
+    desc: "leg bone cartilage"
   },
   {
     regNum: 14,
     item: "yagen",
-    desc: "breastbone cartiledge"
+    desc: "breast bone cartilage"
   },
   {
     regNum: 15,
@@ -67,7 +67,7 @@ const grill = [
   {
     regNum: 16,
     item: "motsu yaki",
-    desc: "chicken kidney"
+    desc: "kidney"
   },
   {
     regNum: 17,
@@ -82,7 +82,7 @@ const grill = [
   {
     regNum: 20,
     item: "kaibashira",
-    desc: "u-10 scallop"
+    desc: "size u-10 scallops"
   },
   {
     regNum: 21,
@@ -92,7 +92,7 @@ const grill = [
   {
     regNum: 22,
     item: "shishamo",
-    desc: "dry smelt"
+    desc: "dried smelt"
   },
   {
     regNum: 23,
@@ -107,7 +107,7 @@ const grill = [
   {
     regNum: 26,
     item: "ika",
-    desc: "squid body"
+    desc: "squid"
   },
   {
     regNum: 27,
@@ -127,7 +127,7 @@ const grill = [
   {
     regNum: 32,
     item: "gobo maki",
-    desc: "burdock root wrapped with side pork"
+    desc: "burdock wrapped with side pork"
   },
   {
     regNum: 33,
@@ -137,12 +137,12 @@ const grill = [
   {
     regNum: 34,
     item: "shishito",
-    desc: "japanese green pepper"
+    desc: "small japanese green pepper"
   },
   {
     regNum: 35,
     item: "yasai yaki",
-    desc: "cherry tomatoes, green pepper, ??"
+    desc: "cherry tomatoes, green pepper, mushroom"
   },
   {
     regNum: 36,
@@ -156,23 +156,28 @@ const grill = [
   },
   {
     regNum: 38,
-    item: "shiso maki",
-    desc: "pork wrapped with shiso"
+    item: "ginnan",
+    desc: "gingko nuts"
   },
   {
     regNum: 39,
+    item: "shiso maki",
+    desc: "pork loin wrapped with shiso"
+  },
+  {
+    regNum: 40,
     item: "uzura",
     desc: "quail egg"
   },
   {
-    regNum: 40,
+    regNum: 41,
     item: "nanban complete dinner - rice",
     desc: "aspara maki (1), shiso maki (1), tebasaki (1), yasai yaki (1), uzura (1), nanban yaki (2), tsukune (1), negima (1), miso soup, pickles, rice, ice cream"
   },
   {
-    regNum: 41,
+    regNum: 42,
     item: "nanban complete dinner - soboro don",
-    desc: "aspara maki, shiso maki, tebasaki, yasai yaki, uzura, nanban yaki, tsukune, negima, miso soup, pickles, soboro don (small), ice cream"
+    desc: "aspara maki (1), shiso maki (1), tebasaki (1), yasai yaki (1), uzura (1), nanban yaki (2), tsukune (1), negima (1), miso soup, pickles, rice, ice cream"
   }
 ]
 
