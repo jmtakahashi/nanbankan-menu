@@ -1,10 +1,6 @@
-type MenuItem = {
-  regNum: number,
-  item: string,
-  desc: string
-}
+import { MenuItemProps } from "../types/types";
 
-export default function MenuItem({ menuItem } ) {
+export default function MenuItem({ menuItem }: MenuItemProps) {
   return (
     <div className="menuItem-container">
       <div className="menuItem-list">
