@@ -41,10 +41,15 @@ a {
   }
 }
 
+.button {
+  padding: .5rem 1rem;
+}
+
 .links {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .linkItem {
@@ -79,6 +84,6 @@ a {
   font-weight: bold;
 }
 
-.backToTopLink {
-  text-align: right;
+.blur {
+  filter: blur(5px);
 }

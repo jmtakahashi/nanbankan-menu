@@ -7,7 +7,7 @@ export default function MenuItem({ menuItem }: MenuItemProps) {
         <h3 className="menuItem-item">{ menuItem.item }</h3>
         <p className="menuItem-desc">{ menuItem.desc }</p>
       </div>
-      <div className="menuItem-regNum">
+      <div className="menuItem-regNum blur" data-num={ menuItem.regNum }>
         { menuItem.regNum }
       </div>
     </div>
