@@ -40,3 +40,45 @@ a {
     color-scheme: dark;
   }
 }
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.linkItem {
+  list-style: none;
+  text-decoration: underline;
+}
+
+.menuItem-container {
+  display: flex;
+  background-color: #222;
+  padding: 1rem;
+  gap: 1rem;
+  max-width: 500px;
+  justify-content: space-between;
+}
+
+.menuItem-item {
+  text-transform: capitalize;
+  margin-bottom: .25em;
+}
+
+.menuItem-desc {
+  font-size: .85rem;
+}
+
+.menuItem-regNum {
+  display: grid;
+  place-content: center;
+  background-color: #171717;
+  padding: 1rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.backToTopLink {
+  text-align: right;
+}
