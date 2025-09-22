@@ -53,6 +53,7 @@ a {
   border: 1px solid #fff;
   border-radius: 3px;
   padding: .5rem 1.25rem;
+  cursor: pointer;
 }
 
 .links {
@@ -64,6 +65,11 @@ a {
 .linkItem {
   list-style: none;
   text-decoration: underline;
+}
+
+.menuItems-container {
+  display: grid;
+  gap: 16px;
 }
 
 .menuItem-container {
@@ -84,15 +90,19 @@ a {
   font-size: .85rem;
 }
 
-.menuItem-regNum {
+.menuItem-regNumContainer {
   display: grid;
   place-content: center;
   background-color: #171717;
+}
+
+.menuItem-regNum {
   padding: 1rem;
   font-size: 1.25rem;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .blur {
-  filter: blur(5px);
+  filter: blur(4px);
 }
