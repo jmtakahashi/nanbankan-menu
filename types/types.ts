@@ -18,12 +18,3 @@ export type MenuItemProps = {
   },
   visibility: boolean;
 }
-
-export type FunctionButtonsProps = {
-  funcs: {
-    reset: (e: any) => void,
-    showAllRegNums: (e: any) => void,
-    shuffleMenuItems: (menuItems: any) => void,
-    menuItems: MenuItemType[]
-  }
-}

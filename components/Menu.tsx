@@ -3,28 +3,17 @@
 import { useState } from "react";
 import { MenuProps } from "../types/types";
 import { MenuItemType } from "../types/types";
-
 import MenuItem from "@/components/MenuItem";
-import FunctionButtons from "@/components/FunctionButtons";
-
 
 export default function Menu({ menu, menuName, menuTitle }: MenuProps) {
-  const INITIAL_STATE = menu
-  const [menuItems, setMenuItems] = useState(INITIAL_STATE)
+  const [menuItems, setMenuItems] = useState(menu)
   const [regNumVisibility, setRegNumVisibility] = useState(false)
 
   const reset = () => {  
-    // send regNumVisibility = false to all menu items
-    setRegNumVisibility(() => false)
-
-    // reset menu items back to normal order (the original array/initial state)
-    setMenuItems(INITIAL_STATE)
-
+    setMenuItems(menu)
   }
 
   const showAllRegNums = () => {
-    // send regNumVisibility = true to all menu items
-    setRegNumVisibility(true)
   }
 
   const shuffleMenuItems = (items: MenuItemType[]) => {
@@ -53,7 +42,11 @@ export default function Menu({ menu, menuName, menuTitle }: MenuProps) {
   return (
     <>
       <h2 id={menuName}>{menuTitle}</h2>
-      <FunctionButtons funcs={{reset, showAllRegNums, shuffleMenuItems, menuItems}} />
+      <div className="buttons">
+        <button id="resetAll" className="button" onClick={reset}>Reset All</button>
+        <button id="showAll" className="button" onClick={showAllRegNums}>Show All</button>
+        <button id="shuffle" className="button" onClick={() => shuffleMenuItems(menuItems)}>Shuffle</button>
+      </div>
       <div id="menuItemsContainer" className="menuItems-container" data-menu={menuName}>
         {menuItems.map((el: MenuItemType) => <MenuItem key={el.regNum} menuItem={el} visibility={regNumVisibility} />)}
       </div>

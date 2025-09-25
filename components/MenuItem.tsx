@@ -1,12 +1,8 @@
 import { useEffect, useState } from "react";
 import { MenuItemProps } from "../types/types";
 
-export default function MenuItem({ menuItem, visibility = false }: MenuItemProps) {
+export default function MenuItem({ menuItem, visibility }: MenuItemProps) {
   const [isVisible, setIsVisible] = useState(visibility);
-
-  useEffect(() => {
-    setIsVisible(visibility)
-  }, [visibility])
 
   const handleRegNumClick = () => {
     setIsVisible(!isVisible);
