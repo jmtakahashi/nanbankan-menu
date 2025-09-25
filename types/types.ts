@@ -21,8 +21,9 @@ export type MenuItemProps = {
 
 export type FunctionButtonsProps = {
   funcs: {
-    reset: (e: any) => void;
-    showAllRegNums: (e: any) => void;
-    shuffleMenuItems: (menuItems: any) => void
+    reset: (e: any) => void,
+    showAllRegNums: (e: any) => void,
+    shuffleMenuItems: (menuItems: any) => void,
+    menuItems: MenuItemType[]
   }
 }

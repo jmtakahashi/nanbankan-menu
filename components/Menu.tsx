@@ -13,26 +13,28 @@ export default function Menu({ menu, menuName, menuTitle }: MenuProps) {
   const [menuItems, setMenuItems] = useState(INITIAL_STATE)
   const [regNumVisibility, setRegNumVisibility] = useState(false)
 
-  const reset = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const reset = () => {  
+    // send regNumVisibility = false to all menu items
+    setRegNumVisibility(() => false)
+
     // reset menu items back to normal order (the original array/initial state)
     setMenuItems(INITIAL_STATE)
-    
-    // send regNumVisibility = false to all menu items
-    setRegNumVisibility(false)
+
   }
 
-  const showAllRegNums = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const showAllRegNums = () => {
     // send regNumVisibility = true to all menu items
+    setRegNumVisibility(true)
   }
 
-  const shuffleMenuItems = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const shuffledMenuItems = [...menuItems]
+  const shuffleMenuItems = (items: MenuItemType[]) => {
+    const shuffledMenuItems = [...items]
     shuffle(shuffledMenuItems)
     setMenuItems(shuffledMenuItems)
   }
 
   /* https://stackoverflow.com/a/2450976 */
-  const shuffle = (array: any[]) => {
+  const shuffle = (array: MenuItemType[]) => {
     let currentIndex = array.length;
 
     // While there remain elements to shuffle...
@@ -51,11 +53,11 @@ export default function Menu({ menu, menuName, menuTitle }: MenuProps) {
   return (
     <>
       <h2 id={menuName}>{menuTitle}</h2>
-      <FunctionButtons funcs={{reset, showAllRegNums, shuffleMenuItems}} />
+      <FunctionButtons funcs={{reset, showAllRegNums, shuffleMenuItems, menuItems}} />
       <div id="menuItemsContainer" className="menuItems-container" data-menu={menuName}>
         {menuItems.map((el: MenuItemType) => <MenuItem key={el.regNum} menuItem={el} visibility={regNumVisibility} />)}
       </div>
-      <a href="#top" className="backToTopLink">back to top</a>
+      <a href="#" className="backToTopLink">back to top</a>
     </>
   )
 }

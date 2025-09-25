@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import styles from "./page.module.css";
+import styles from "./layout.module.css";
 import Link from "next/link";
 
 const geistSans = Geist({
@@ -28,8 +28,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <div className={styles.page}>
-          <header  className={styles.header}>
-            <h1 id="top" className={styles.pageTitle}>Nanbankan Menu Trainer</h1>
+          <header className={styles.header}>
+            <h1 className={styles.pageTitle}>Nanbankan Menu Trainer</h1>
 
             <ul className="links">
               <li className="linkItem"><Link href="/">Grill </Link></li>
