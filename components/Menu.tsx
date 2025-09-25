@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { MenuProps } from "../types/types";
 import { MenuItemType } from "../types/types";
+import styles from "../app/layout.module.css";
 import MenuItem from "@/components/MenuItem";
 
 export default function Menu({ menu, menuName, menuTitle }: MenuProps) {
@@ -42,15 +43,15 @@ export default function Menu({ menu, menuName, menuTitle }: MenuProps) {
   return (
     <>
       <h2 id={menuName}>{menuTitle}</h2>
-      <div className="buttons">
-        <button id="resetAll" className="button" onClick={reset}>Reset All</button>
-        <button id="showAll" className="button" onClick={showAllRegNums}>Show All</button>
-        <button id="shuffle" className="button" onClick={() => shuffleMenuItems(menuItems)}>Shuffle</button>
+      <div className={styles.buttons}>
+        <button id="resetAll" className={styles.button} onClick={reset}>Reset All</button>
+        <button id="showAll" className={styles.button} onClick={showAllRegNums}>Show All</button>
+        <button id="shuffle" className={styles.button} onClick={() => shuffleMenuItems(menuItems)}>Shuffle</button>
       </div>
-      <div id="menuItemsContainer" className="menuItems-container" data-menu={menuName}>
+      <div id="menuItemsContainer" className={styles.menuItems_container} data-menu={menuName}>
         {menuItems.map((el: MenuItemType) => <MenuItem key={el.regNum} menuItem={el} visibility={regNumVisibility} />)}
       </div>
-      <a href="#" className="backToTopLink">back to top</a>
+      <a href="#" className={styles.backToTopLink}>back to top</a>
     </>
   )
 }

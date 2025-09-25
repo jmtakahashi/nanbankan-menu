@@ -31,12 +31,12 @@ export default function RootLayout({
           <header className={styles.header}>
             <h1 className={styles.pageTitle}>Nanbankan Menu Trainer</h1>
 
-            <ul className="links">
-              <li className="linkItem"><Link href="/">Grill </Link></li>
-              <li className="linkItem"><Link href="/kitchen">Kitchen </Link></li>
-              <li className="linkItem"><Link href="/specials">Specials </Link></li>
-              <li className="linkItem"><Link href="/misc-food">Misc </Link></li>
-              <li className="linkItem"><Link href="/drinks">Drinks </Link></li>
+            <ul className={styles.links}>
+              <li className={styles.linkItem}><Link href="/">Grill</Link></li>
+              <li className={styles.linkItem}><Link href="/kitchen">Kitchen</Link></li>
+              <li className={styles.linkItem}><Link href="/specials">Specials</Link></li>
+              <li className={styles.linkItem}><Link href="/misc-food">Misc</Link></li>
+              <li className={styles.linkItem}><Link href="/drinks">Drinks</Link></li>
             </ul>
           </header>
             
@@ -44,7 +44,7 @@ export default function RootLayout({
             {children}
           </main>
         
-          <footer className={styles.footer}></footer>
+          <footer className={styles.footer}>Built with ❤️ by <a href="https://whoisjaytee.com" target="_blank">Jaytee</a></footer>
         </div>
       </body>
     </html>

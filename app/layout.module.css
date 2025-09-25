@@ -9,9 +9,10 @@
   display: grid;
   align-items: center;
   justify-items: center;
-  max-width: 720px;
+  max-width: 600px;
+  margin: auto;
   min-height: 100svh;
-  padding: 80px;
+  padding: 32px;
   gap: 64px;
   font-family: var(--font-geist-sans);
 }
@@ -32,35 +33,27 @@
 }
 
 .header {
-  width: 100%;
   grid-row-start: 1;
   display: grid;
   gap: 2rem;
+  width: 100%;
 }
 
 .main {
-  width: 100%;
+  grid-row-start: 2;
   display: flex;
   flex-direction: column;
   gap: 32px;
-  grid-row-start: 2;
+  width: 100%;
 }
 
 .footer {
   grid-row-start: 3;
-  display: flex;
-  gap: 24px;
+  width: 100%;
+  font-size: .75rem;
+  text-align: center;
 }
 
-.footer a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.footer img {
-  flex-shrink: 0;
-}
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
@@ -70,15 +63,68 @@
   }
 }
 
-@media (max-width: 600px) {
-  .page {
-    padding: 32px;
-    padding-bottom: 80px;
-  }
+/* added by jt */
 
-  .footer {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  }
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.button {
+  font-size: .85rem;
+  color: var(--foreground);
+  background-color: transparent;
+  border: 1px solid var(--foreground);
+  border-radius: 5px;
+  padding: .5rem 1.25rem;
+  cursor: pointer;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.linkItem {
+  list-style: none;
+}
+
+.menuItems_container {
+  display: grid;
+  gap: 16px;
+}
+
+.menuItem_container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: #222;
+  padding: 1rem;
+}
+
+.menuItem_item {
+  text-transform: capitalize;
+  margin-bottom: .25em;
+}
+
+.menuItem_desc {
+  font-size: .85rem;
+}
+
+.menuItem_regNumContainer {
+  display: grid;
+  place-content: center;
+  background-color: #171717;
+}
+
+.menuItem_regNum {
+  padding: 1rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.blur {
+  filter: blur(5px);
 }
