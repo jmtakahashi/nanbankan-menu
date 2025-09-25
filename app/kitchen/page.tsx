@@ -1,57 +1,8 @@
-"use client";
-
-import { useState } from 'react';
-
 import kitchen from "../../public/kitchen"
-import MenuItem from "@/components/MenuItem";
-import FunctionButtons from "@/components/FunctionButtons";
+import Menu from "@/components/Menu";
 
-
-export default function Kitchen() {
-  const [menuItems, setMenuItems] = useState(kitchen)
-  
-  const hideAllRegNums = (e: any) => {
-    e.preventDefault();
-
-    // reset menu items back to normal order
-    setMenuItems(kitchen)    
-  }
-
-  const showAllRegNums = (e: any) => {
-    e.preventDefault();
-  }
-
-  const shuffleMenuItems = () => {
-    const shuffledMenuItems = [...menuItems]
-    shuffle(shuffledMenuItems)
-    setMenuItems(shuffledMenuItems)
-  }
-
-  /* https://stackoverflow.com/a/2450976 */
-  const shuffle = (array: any) => {
-    let currentIndex = array.length;
-
-    // While there remain elements to shuffle...
-    while (currentIndex != 0) {
-
-      // Pick a remaining element...
-      let randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-
-      // And swap it with the current element.
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
-    }
-  }
-  
+export default function Page() {
   return (
-    <>
-      <h2 id="kitchen">From the Kitchen</h2>
-      <FunctionButtons funcs={{hideAllRegNums, showAllRegNums, shuffleMenuItems}} />
-      <div id="menuItemsContainer" className="menuItems-container" data-menu="kitchen">
-        {menuItems.map(e => <MenuItem key={e.regNum} menuItem={e} visibility={false} />)}
-      </div>
-      <a href="#top" className="backToTopLink">back to top</a>
-    </>
-  );
+    <Menu menu={kitchen} menuName="kitchen" menuTitle="From the Kitchen" />
+  )
 }
