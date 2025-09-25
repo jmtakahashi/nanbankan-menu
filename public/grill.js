@@ -82,12 +82,12 @@ const grill = [
   {
     regNum: 20,
     item: "kaibashira",
-    desc: "size u-10 scallops"
+    desc: "size u-10 scallop - 1"
   },
   {
     regNum: 21,
     item: "ebi",
-    desc: "size 8/12 shrimp"
+    desc: "size 8/12 shrimp - 1"
   },
   {
     regNum: 22,

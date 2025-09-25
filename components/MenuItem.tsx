@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { MenuItemProps } from "../types/types";
 
 export default function MenuItem({ menuItem, visibility }: MenuItemProps) {

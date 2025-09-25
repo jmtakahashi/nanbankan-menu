@@ -2,7 +2,7 @@ const specials = [
   {
     regNum: 303,
     item: "black cod",
-    desc: "gindara"
+    desc: "butterfish"
   },
   {
     regNum: 304,
@@ -32,7 +32,7 @@ const specials = [
   {
     regNum: 309,
     item: "tomato maki",
-    desc: "tomato wrapped with shiso leaf"
+    desc: "tomato wrapped with shiso leaf - 1 tomato cut in half (1 skewer)"
   },
   {
     regNum: 311,
@@ -62,12 +62,12 @@ const specials = [
   {
     regNum: 317,
     item: "pork belly",
-    desc: "bara - shio or tare"
+    desc: "shio or tare"
   },
   {
     regNum: 318,
     item: "pork sausage",
-    desc: ""
+    desc: "regular or spicy"
   },
   {
     regNum: 319,
