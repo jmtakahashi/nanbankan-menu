@@ -27,7 +27,7 @@ const specials = [
   {
     regNum: 308,
     item: "australian lamb",
-    desc: ""
+    desc: "garlic or no garlic"
   },
   {
     regNum: 309,
@@ -42,17 +42,17 @@ const specials = [
   {
     regNum: 312,
     item: "potato",
-    desc: ""
+    desc: "with sour cream or without"
   },
   {
     regNum: 313,
     item: "corn",
-    desc: ""
+    desc: "shaved or on the cob"
   },
   {
     regNum: 314,
     item: "onion",
-    desc: ""
+    desc: "shio or tare"
   },
   {
     regNum: 315,
@@ -62,11 +62,16 @@ const specials = [
   {
     regNum: 317,
     item: "pork belly",
-    desc: "bara"
+    desc: "bara - shio or tare"
   },
   {
     regNum: 318,
     item: "pork sausage",
+    desc: ""
+  },
+  {
+    regNum: 319,
+    item: "baby zucchini",
     desc: ""
   },
   {

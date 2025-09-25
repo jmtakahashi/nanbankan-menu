@@ -47,7 +47,7 @@ const kitchen = [
   {
     regNum: 106,
     item: "yaki onigiri",
-    desc: "char-broiled triangular rice ball with your choice of stuffing - plum, salmon, tarako, dried bonito or house special"
+    desc: "char-broiled triangular rice ball with your choice of stuffing - plum, salmon, tarako, dried bonito or house special (bonito, scallions, sesame oil, sesame seeds)"
   },
   {
     regNum: 107,

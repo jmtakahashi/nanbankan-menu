@@ -17,7 +17,7 @@ const grill = [
   {
     regNum: 4,
     item: "sasami",
-    desc: "white meat"
+    desc: "white meat - shio, tare, yuzu kosho, wasabi, ume"
   },
   {
     regNum: 5,
@@ -27,7 +27,7 @@ const grill = [
   {
     regNum: 7,
     item: "kawa",
-    desc: "chicken skin"
+    desc: "chicken skin - shio or tare"
   },
   {
     regNum: 8,
@@ -37,7 +37,7 @@ const grill = [
   {
     regNum: 9,
     item: "kimo",
-    desc: "chicken liver"
+    desc: "chicken liver - shio or tare"
   },
   {
     regNum: 10,
