@@ -16,5 +16,6 @@ export type MenuItemProps = {
     item: string;
     desc: string;
   },
-  visibility: boolean;
+  buttonClickedFlag: string
+  setButtonClickedFlag: (e: any) => void
 }

@@ -8,13 +8,15 @@ import MenuItem from "@/components/MenuItem";
 
 export default function Menu({ menu, menuName, menuTitle }: MenuProps) {
   const [menuItems, setMenuItems] = useState(menu)
-  const [regNumVisibility, setRegNumVisibility] = useState(false)
+  const [buttonClickedFlag, setButtonClickedFlag] = useState("")
 
   const reset = () => {  
     setMenuItems(menu)
+    setButtonClickedFlag("reset")
   }
 
   const showAllRegNums = () => {
+    setButtonClickedFlag("showAll")
   }
 
   const shuffleMenuItems = (items: MenuItemType[]) => {
@@ -49,7 +51,7 @@ export default function Menu({ menu, menuName, menuTitle }: MenuProps) {
         <button id="shuffle" className={styles.button} onClick={() => shuffleMenuItems(menuItems)}>Shuffle</button>
       </div>
       <div id="menuItemsContainer" className={styles.menuItems_container} data-menu={menuName}>
-        {menuItems.map((el: MenuItemType) => <MenuItem key={el.regNum} menuItem={el} visibility={regNumVisibility} />)}
+        {menuItems.map((el: MenuItemType) => <MenuItem key={el.regNum} menuItem={el} buttonClickedFlag={buttonClickedFlag} setButtonClickedFlag={setButtonClickedFlag} />)}
       </div>
       <a href="#" className={styles.backToTopLink}>back to top</a>
     </>

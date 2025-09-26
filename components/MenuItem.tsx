@@ -1,12 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MenuItemProps } from "../types/types";
 import styles from "../app/layout.module.css";
 
-export default function MenuItem({ menuItem, visibility }: MenuItemProps) {
-  const [isVisible, setIsVisible] = useState(visibility);
+export default function MenuItem({ menuItem, buttonClickedFlag, setButtonClickedFlag }: MenuItemProps) {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    if (buttonClickedFlag === "reset") {
+      setIsVisible(false)
+    } else if (buttonClickedFlag === "showAll") {
+      setIsVisible(true)
+    }
+  }, [buttonClickedFlag])
 
   const handleRegNumClick = () => {
     setIsVisible(!isVisible);
+    setButtonClickedFlag("")
   }
 
   return (
