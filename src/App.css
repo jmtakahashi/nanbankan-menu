@@ -1,45 +1,3 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* below is from next.js version */
-
-
 .page {
   --gray-rgb: 0, 0, 0;
   --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
@@ -67,10 +25,6 @@
 
     --button-primary-hover: #ccc;
     --button-secondary-hover: #1a1a1a;
-  }
-
-  .logo {
-    filter: invert();
   }
 }
 
@@ -106,6 +60,15 @@
 }
 
 /* added by jt */
+.links {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.linkItem {
+  list-style: none;
+}
 
 .buttons {
   display: flex;
@@ -120,16 +83,6 @@
   border-radius: 5px;
   padding: .5rem 1.25rem;
   cursor: pointer;
-}
-
-.links {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.linkItem {
-  list-style: none;
 }
 
 .menuItems_container {

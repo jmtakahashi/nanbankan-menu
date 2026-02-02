@@ -6,7 +6,7 @@ import misc from './itemData/miscFood';
 import drinks from './itemData/drinks';
 import MenuItem from "./MenuItem";
 
-export default function Menu({ menu }) {
+export default function Menu({ menu, mainContainerRef }) {
   const [menuName, setMenuName] = useState(menu[0]?.menu || "menu")
   const [menuTitle, setMenuTitle] = useState(menu[0]?.menuTitle || "Menu")
   const [menuItems, setMenuItems] = useState([])
@@ -67,7 +67,7 @@ export default function Menu({ menu }) {
       <div id="menuItemsContainer" className="menuItems_container" data-menu={menuName}>
         {menuItems.map((item) => <MenuItem key={item.regNum} menuItem={item} buttonClickedFlag={buttonClickedFlag} setButtonClickedFlag={setButtonClickedFlag} />)}
       </div>
-      <button className="backToTopLink">back to top</button>
+      <button className="button" onClick={() => { }}>back to top</button>
     </>
   )
 }
