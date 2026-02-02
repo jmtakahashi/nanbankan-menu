@@ -36,3 +36,137 @@
     transform: rotate(360deg);
   }
 }
+
+/* below is from next.js version */
+
+
+.page {
+  --gray-rgb: 0, 0, 0;
+  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
+  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
+
+  --button-primary-hover: #383838;
+  --button-secondary-hover: #f2f2f2;
+
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  max-width: 600px;
+  margin: auto;
+  min-height: 100svh;
+  padding: 32px;
+  gap: 64px;
+  font-family: var(--font-geist-sans);
+}
+
+@media (prefers-color-scheme: dark) {
+  .page {
+    --gray-rgb: 255, 255, 255;
+    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
+    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
+
+    --button-primary-hover: #ccc;
+    --button-secondary-hover: #1a1a1a;
+  }
+
+  .logo {
+    filter: invert();
+  }
+}
+
+.header {
+  grid-row-start: 1;
+  display: grid;
+  gap: 2rem;
+  width: 100%;
+}
+
+.main {
+  grid-row-start: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+}
+
+.footer {
+  grid-row-start: 3;
+  width: 100%;
+  font-size: .75rem;
+  text-align: center;
+}
+
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .footer a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
+
+/* added by jt */
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.button {
+  font-size: .85rem;
+  color: var(--foreground);
+  background-color: transparent;
+  border: 1px solid var(--foreground);
+  border-radius: 5px;
+  padding: .5rem 1.25rem;
+  cursor: pointer;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.linkItem {
+  list-style: none;
+}
+
+.menuItems_container {
+  display: grid;
+  gap: 16px;
+}
+
+.menuItem_container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: #222;
+  padding: 1rem;
+}
+
+.menuItem_item {
+  text-transform: capitalize;
+  margin-bottom: .25em;
+}
+
+.menuItem_desc {
+  font-size: .85rem;
+}
+
+.menuItem_regNumContainer {
+  display: grid;
+  place-content: center;
+  background-color: #171717;
+}
+
+.menuItem_regNum {
+  padding: 1rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.blur {
+  filter: blur(5px);
+}
