@@ -1,8 +1,9 @@
+'use client'
+import { useState } from "react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import styles from "./layout.module.css";
-import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,6 +25,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const [page, setPage] = useState("");
+
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
@@ -32,11 +36,11 @@ export default function RootLayout({
             <h1 className={styles.pageTitle}>Nanbankan Menu Trainer</h1>
 
             <ul className={styles.links}>
-              <li className={styles.linkItem}><Link href="/">Grill</Link></li>
-              <li className={styles.linkItem}><Link href="/kitchen">Kitchen</Link></li>
-              <li className={styles.linkItem}><Link href="/specials">Specials</Link></li>
-              <li className={styles.linkItem}><Link href="/misc-food">Misc</Link></li>
-              <li className={styles.linkItem}><Link href="/drinks">Drinks</Link></li>
+              <li className={styles.linkItem}><button onClick={() => setPage("grill")}>Grill</button></li>
+              <li className={styles.linkItem}><button onClick={() => setPage("kitchen")}>Kitchen</button></li>
+              <li className={styles.linkItem}><button onClick={() => setPage("specials")}>Specials</button></li>
+              <li className={styles.linkItem}><button onClick={() => setPage("misc")}>Misc</button></li>
+              <li className={styles.linkItem}><button onClick={() => setPage("drinks")}>Drinks</button></li>
             </ul>
           </header>
             

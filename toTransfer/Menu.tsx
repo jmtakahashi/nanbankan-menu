@@ -1,10 +1,10 @@
 "use client"
 
 import { useState } from "react";
-import { MenuProps } from "../types/types";
-import { MenuItemType } from "../types/types";
+import { MenuProps } from "./types";
+import { MenuItemType } from "./types";
 import styles from "../app/layout.module.css";
-import MenuItem from "@/components/MenuItem";
+import MenuItem from "@/toTransfer/MenuItem";
 
 export default function Menu({ menu, menuName, menuTitle }: MenuProps) {
   const [menuItems, setMenuItems] = useState(menu)

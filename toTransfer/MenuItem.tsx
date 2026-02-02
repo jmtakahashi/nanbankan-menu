@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { MenuItemProps } from "../types/types";
+import { MenuItemProps } from "./types";
 import styles from "../app/layout.module.css";
 
 export default function MenuItem({ menuItem, buttonClickedFlag, setButtonClickedFlag }: MenuItemProps) {
