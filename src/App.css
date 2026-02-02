@@ -1,55 +1,32 @@
 .page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-
   display: grid;
-  align-items: center;
-  justify-items: center;
   max-width: 600px;
   margin: auto;
-  min-height: 100svh;
-  padding: 32px;
+  padding: 64px 32px;
   gap: 64px;
-  font-family: var(--font-geist-sans);
-}
-
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-  }
 }
 
 .header {
   grid-row-start: 1;
   display: grid;
-  gap: 2rem;
-  width: 100%;
+  gap: 32px;
 }
 
 .main {
   grid-row-start: 2;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 32px;
-  width: 100%;
 }
 
 .footer {
   grid-row-start: 3;
-  width: 100%;
-  font-size: .75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
   text-align: center;
+  font-size: .75rem;
 }
-
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
@@ -75,14 +52,28 @@
   gap: 1rem;
 }
 
-.button {
+.button, .link {
   font-size: .85rem;
   color: var(--foreground);
   background-color: transparent;
   border: 1px solid var(--foreground);
   border-radius: 5px;
-  padding: .5rem 1.25rem;
+  padding: .65em 1.75em;
   cursor: pointer;
+}
+
+.backToTopButton {
+  position: relative;
+  border: 1px solid var(--foreground);
+  border-radius: 50%;
+  padding: 2.5em;
+}
+
+.backToTopText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .menuItems_container {

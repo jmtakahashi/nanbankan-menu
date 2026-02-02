@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 
 export default function MenuItem({ menuItem, buttonClickedFlag, setButtonClickedFlag }) {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    if (buttonClickedFlag === "reset") {
-      setIsVisible(false)
-    } else if (buttonClickedFlag === "showAll") {
+    if (buttonClickedFlag === "resetAll") {
       setIsVisible(true)
+    } else if (buttonClickedFlag === "hideAll") {
+      setIsVisible(false)
     }
   }, [buttonClickedFlag])
 

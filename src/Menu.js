@@ -6,40 +6,49 @@ import misc from './itemData/miscFood';
 import drinks from './itemData/drinks';
 import MenuItem from "./MenuItem";
 
-export default function Menu({ menu, mainContainerRef }) {
-  const [menuName, setMenuName] = useState(menu[0]?.menu || "menu")
-  const [menuTitle, setMenuTitle] = useState(menu[0]?.menuTitle || "Menu")
-  const [menuItems, setMenuItems] = useState([])
+export default function Menu({ menu }) {
+  const [menuItems, setMenuItems] = useState([]);
   const [buttonClickedFlag, setButtonClickedFlag] = useState("")
 
+  const menuName = menu.charAt(0).toUpperCase() + menu.slice(1);
 
+  // based on the menu prop, we derive the menu items to show
+  const menuItemsFromMenu = (menu) => {
+    return menu === 'grill'
+      ? grill
+      : menu === 'kitchen'
+        ? kitchen
+        : menu === 'specials'
+          ? specials
+          : menu === 'misc'
+            ? misc
+            : menu === 'drinks'
+              ? drinks
+              : [];
+  }
+
+  
   useEffect(() => { 
-    setMenuItems(
-      menu === "grill" ? grill :
-      menu === "kitchen" ? kitchen :
-      menu === "specials" ? specials :
-      menu === "misc" ? misc :
-      menu === "drinks" ? drinks :
-      []
-    )
+    setMenuItems(() => menuItemsFromMenu(menu));
   }, [menu])
 
-  const reset = () => {  
-    setMenuItems(menu)
-    setButtonClickedFlag("reset")
+  const handleReset = () => {  
+    setMenuItems(() => menuItemsFromMenu(menu));
+    setButtonClickedFlag("resetAll")
   }
 
-  const showAllRegNums = () => {
-    setButtonClickedFlag("showAll")
+  const handleShowAllRegNums = () => {
+    setButtonClickedFlag("hideAll")
   }
 
-  const shuffleMenuItems = (items) => {
+  const handleShuffleMenuItems = (items) => {
     const shuffledMenuItems = [...items]
     shuffle(shuffledMenuItems)
     setMenuItems(shuffledMenuItems)
   }
 
-  /* https://stackoverflow.com/a/2450976 */
+  // https://stackoverflow.com/a/2450976
+  // shuffles array in place
   const shuffle = (array) => {
     let currentIndex = array.length;
 
@@ -58,16 +67,36 @@ export default function Menu({ menu, mainContainerRef }) {
 
   return (
     <>
-      <h2 id={menuName}>{menuTitle}</h2>
-      <div className="buttons">
-        <button id="resetAll" className="button" onClick={reset}>Reset All</button>
-        <button id="showAll" className="button" onClick={showAllRegNums}>Show All</button>
-        <button id="shuffle" className="button" onClick={() => shuffleMenuItems(menuItems)}>Shuffle</button>
+      <h2>{menuName}</h2>
+
+      <div className='buttons'>
+        <button className='button' onClick={handleReset}>
+          Reset All
+        </button>
+        <button className='button' onClick={handleShowAllRegNums}>
+          Hide All
+        </button>
+        <button
+          className='button'
+          onClick={() => handleShuffleMenuItems(menuItems)}
+        >
+          Shuffle
+        </button>
       </div>
-      <div id="menuItemsContainer" className="menuItems_container" data-menu={menuName}>
-        {menuItems.map((item) => <MenuItem key={item.regNum} menuItem={item} buttonClickedFlag={buttonClickedFlag} setButtonClickedFlag={setButtonClickedFlag} />)}
+
+      <div
+        className='menuItems_container'
+        data-menu={menu}
+      >
+        {menuItems.map((menuItem) => (
+          <MenuItem
+            key={menuItem.regNum}
+            menuItem={menuItem}
+            buttonClickedFlag={buttonClickedFlag}
+            setButtonClickedFlag={setButtonClickedFlag}
+          />
+        ))}
       </div>
-      <button className="button" onClick={() => { }}>back to top</button>
     </>
-  )
+  );
 }

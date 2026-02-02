@@ -4,27 +4,60 @@ import './App.css';
 
 function App() {
   const [menu, setMenu] = useState("grill");
-  const mainContainerRef = useRef(null);
+  const ref = useRef(null);
 
   return (
-    <div className="page" ref={mainContainerRef}>
-      <header className="header">
-        <h1 className="pageTitle">Nanbankan Menu Trainer</h1>
+    <div className='page' ref={ref}>
+      <header className='header'>
+        <h1 className='pageTitle'>Nanbankan Menu Trainer</h1>
 
-        <ul className="links">
-          <li className="linkItem"><button className="button" onClick={() => setMenu("grill")}>Grill</button></li>
-          <li className="linkItem"><button className="button" onClick={() => setMenu("kitchen")}>Kitchen</button></li>
-          <li className="linkItem"><button className="button" onClick={() => setMenu("specials")}>Specials</button></li>
-          <li className="linkItem"><button className="button" onClick={() => setMenu("misc")}>Misc</button></li>
-          <li className="linkItem"><button className="button" onClick={() => setMenu("drinks")}>Drinks</button></li>
+        <ul className='links'>
+          <li className='linkItem'>
+            <button className='link' onClick={() => setMenu('grill')}>
+              Grill
+            </button>
+          </li>
+          <li className='linkItem'>
+            <button className='link' onClick={() => setMenu('kitchen')}>
+              Kitchen
+            </button>
+          </li>
+          <li className='linkItem'>
+            <button className='link' onClick={() => setMenu('specials')}>
+              Specials
+            </button>
+          </li>
+          <li className='linkItem'>
+            <button className='link' onClick={() => setMenu('misc')}>
+              Misc
+            </button>
+          </li>
+          <li className='linkItem'>
+            <button className='link' onClick={() => setMenu('drinks')}>
+              Drinks
+            </button>
+          </li>
         </ul>
       </header>
-        
-      <main className="main">
-        <Menu menu={menu} mainContainerRef={mainContainerRef.current} />
+
+      <main className='main'>
+        <Menu menu={menu} />
       </main>
-    
-      <footer className="footer">Built with ❤️ by <a href="https://whoisjaytee.com" target="_blank" rel="noreferrer">Jaytee</a></footer>
+
+      <footer className='footer'>
+        <div
+          className='button backToTopButton'
+          onClick={() => ref.current.scrollIntoView({ behavior: 'smooth' })}
+        >
+          <span className='backToTopText'>top</span>
+        </div>
+        <span>
+          Built with ❤️ by{' '}
+          <a href='https://whoisjaytee.com' target='_blank' rel='noreferrer'>
+            Jaytee
+          </a>
+        </span>
+      </footer>
     </div>
   );
 }
