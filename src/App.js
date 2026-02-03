@@ -49,7 +49,7 @@ function App() {
           className='button backToTopButton'
           onClick={() => ref.current.scrollIntoView({ behavior: 'smooth' })}
         >
-          <span className='backToTopText'>top</span>
+          <span className='backToTopText'>^</span>
         </div>
         <span>
           Built with ❤️ by{' '}

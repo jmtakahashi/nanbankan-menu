@@ -53,13 +53,20 @@
   gap: 1rem;
 }
 
+.link {
+  font-size: 1rem;
+}
+
+.button {
+  font-size: .85rem;  
+}
+
 .button, .link {
-  font-size: .85rem;
   color: var(--foreground);
   background-color: transparent;
   border: 1px solid var(--foreground);
-  border-radius: 5px;
-  padding: .65em 1.75em;
+  border-radius: .35em;
+  padding: .5em 1.5em;
   cursor: pointer;
 }
 
@@ -74,7 +81,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -35%) ;
+  font-size: 2rem;
 }
 
 .menuItems_container {
