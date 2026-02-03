@@ -27,8 +27,6 @@ export default function Menu({ menu }) {
   const [menuItems, setMenuItems] = useState(() => menuItemsFromMenu(menu));
   const [buttonClickedFlag, setButtonClickedFlag] = useState('');
 
-  
-
   useEffect(() => {
     setMenuItems(() => menuItemsFromMenu(menu));
   }, [menu]);
